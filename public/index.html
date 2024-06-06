@@ -1,119 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="favicon.png"> 
-    <link rel="import" href="component.html"> 
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="import" href="component.html">
     <title>Image Uploader</title>
-     <style>
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.25rem;
-            background:#333 ;
+            background: #333;
             color: whitesmoke;
-       }
+        }
 
 
-      h1 {
-       text-align: center;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color:aquamarine;
-       
-    }
+        h1 {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: aquamarine;
 
-    h2 {
-    text-align: center;
-}
+        }
 
-    h3 {  
-     text-align: center;
-     color:aquamarine; 
-    }
+        h2 {
+            text-align: center;
+        }
 
-
-    p {
-        text-align: center;
-        font-family:Georgia, 'Times New Roman', Times, serif cursive;
-        font-style: normal;
-    } 
+        h3 {
+            text-align: center;
+            color: aquamarine;
+        }
 
 
-    .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}  
+        p {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif cursive;
+            font-style: normal;
+        }
 
-    input,
-    button {
-        font: inherit;
-        width: max-content; 
-       }  
-       
-    form {
-        text-align: center;
-        display: block;
-        flex-flow: column nowrap; 
-        gap: 1.5rem;
-    }
+        fieldset {
+            width: 40%;
+            display: block;
+            margin: auto;
+            border: 2px solid red;
+            color: orange;
+            font-size: large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 5px;
+            letter-spacing: 2px;
 
-    .footer {
+
+        }
+
+        legend {
+            text-align: right;
+            color: red;
+        }
+
+
+        .center {
+            display: block;
+            margin: auto;
+            width: 50%;
+        }
+
+        input,
+        button {
+            font: inherit;
+            width: max-content;
+        }
+
+        form {
+            text-align: center;
+            display: block;
+            flex-flow: column nowrap;
+            gap: 1.5rem;
+        }
+
+        .footer {
             padding: sticky;
-            bottom: O;
-			      color: var(--HEADER-COLOR);
-            padding: var(--PADDING-TB) var(--PADDING-SIDE); 
-			      margin-top: 1em;
+            margin-bottom: O;
+            color: var(--HEADER-COLOR);
+            padding: var(--PADDING-TB) var(--PADDING-SIDE);
+            margin-top: 1em;
             padding-bottom: 0.7em;
-			      text-align: center;
-			      font-size: 0.9em;
-		}
-
-           
-</style>
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
+
 <body>
-
-
-
-     <h1>تحميل المستندات</h1>
+    <h1>تحميل المستندات</h1>
     <h1>Upload documents:</h1>
-        
-<h2>:ملاحظة</h2>
-<p style="letter-spacing: 2px;">
-الرجاء الإنتباه: قبل البدئ قم بتجهيز الوثائق التي تتبث الشخصية وتحميلها على جهازك على النمط الرقمي لتكون النسخ جيدة عند الوصول، يجب مسحها بجهاز الإسكنراو تصويرها "بي دي إف" وتحميلها وقم بالإرسال هنا. يرجى ان تخضع الوثائق للمعايير <br>
-بنفس جودة الوثائق التي ترسلها يفترض ان تكون صالحة للإستمال وغير منتهية الصلاحية على الأقل ثلاثة شهور قبل إنتهائها</p>
 
-<!-- <h2>Note:</h2>
+    <fieldset>
+        <legend>
+            <h2>:ملاحظة</h2>
+        </legend>
+        <p>الرجاء تحميل الوثائق مسبقاً على جهازك رقمياً "بي دي إف" إذا لم تكون قد فعلت لظمان جودة الصورة وصالحة
+            للإستخدام عند الوصول</p>
+        <p>[png, jpg, jpng]:فورمات </p>
+        <p>وبنفس الجودة ثلاث شهور تكون الصلاحية قبل إنتهائها</p>
+    </fieldset>
+
+    <!-- <h2>Note:</h2>
     <p> Before starting, pay attention to prepare them  [format numeric] in your device computer/mobile type [png, jpg, jpng]... Start uploading here after when you are ready chosث in the casse "Choose file" and send by submiting them with the button submit. The documents must be subject to the standards.<br>
 
     Likewise in period of validity, at least three monts before the expiration date arrives to an end.</p> -->
-           <br>
-            <h3 style="letter-spacing: 0.6;">:حمل ملفاتك هنا وقم بالإرسال</h3>  
+    <br>
+    <h3 style="letter-spacing: 0.6;">:حمل ملفاتك من هنا وقم بالإرسال</h3>
 
-           <form  action="/upload" method="post" enctype="multipart/form-data" >
+    <form action="/upload" method="post" enctype="multipart/form-data">
 
-            <!-- <label for="text"><h3>Upload your file here and send.</h3></label> -->
-            <br>
-            <input type="file" name="file" accept="images/*" />
+        <!-- <label for="text"><h3>Upload your file here and send.</h3></label> -->
+        <br>
+        <input type="file" name="file" accept="images/*" />
 
-            <button type="submit">Submit</button>
-            <br><br>
-         <h3 style="letter-spacing: 0.6px;">سوف تتلقى رداً حول إتمام عملية الإرسال بنجاح</h3>
-        <!-- <p>When submit, if every thing went correctly you should recieve a message informs you: "Successfuly transmitted!"</p>  -->
+        <button type="submit">Submit</button>
+        <br><br>
+        <h3 style="letter-spacing: 0.6px;">سوف تتلقى رداً حول إتمام عملية الإرسال بنجاح</h3>
+        <p>When submit, if every thing went correctly you should recieve a message informing you: "Transmitted
+            successfuly !"</p>
 
     </form>
 
     <footer class="footer">
-    
+
         <span class="nowrap">Copyrights &copy; <time id="year"></time></span>
         <span class="nowrap">IdyllAc</span>
-    
+
     </footer>
 
-   
-</body>
-</html>
 
+</body>
+
+</html>
